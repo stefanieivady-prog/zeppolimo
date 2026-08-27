@@ -35,7 +35,8 @@
       width: clamp(110px, 15vw, 210px);
       z-index: 2;
       pointer-events: none;
-      animation: roam 18s linear infinite;
+      animation: roam 16s linear infinite;
+      will-change: transform;
     }
 
     .dog {
@@ -43,53 +44,45 @@
       height: auto;
       display: block;
       transform-origin: 50% 90%;
-      animation: bounce 0.9s ease-in-out infinite alternate;
+      animation: bounce 0.75s ease-in-out infinite alternate;
       filter: drop-shadow(0 8px 7px rgba(0,0,0,.18));
+      will-change: transform;
     }
 
     @keyframes bounce {
-      0%   { transform: translateY(0) rotate(-4deg) scaleX(1); }
-      55%  { transform: translateY(-22px) rotate(4deg) scaleX(1.03); }
-      100% { transform: translateY(0) rotate(-2deg) scaleX(.98); }
+      0%   { transform: translateY(0) rotate(-5deg) scale(1); }
+      50%  { transform: translateY(-28px) rotate(5deg) scale(1.04); }
+      100% { transform: translateY(0) rotate(-2deg) scale(.99); }
     }
 
     @keyframes roam {
-      0%   { transform: translate(3vw, 72vh) scaleX(1); }
-      12%  { transform: translate(18vw, 55vh) scaleX(1); }
-      25%  { transform: translate(38vw, 76vh) scaleX(1); }
-      38%  { transform: translate(62vw, 40vh) scaleX(1); }
-      50%  { transform: translate(80vw, 68vh) scaleX(1); }
-      51%  { transform: translate(80vw, 68vh) scaleX(-1); }
-      64%  { transform: translate(58vw, 15vh) scaleX(-1); }
-      77%  { transform: translate(33vw, 35vh) scaleX(-1); }
-      90%  { transform: translate(10vw, 14vh) scaleX(-1); }
-      100% { transform: translate(3vw, 72vh) scaleX(-1); }
+      0%   { transform: translate(2vw, 72vh) scaleX(1); }
+      10%  { transform: translate(16vw, 58vh) scaleX(1); }
+      22%  { transform: translate(34vw, 76vh) scaleX(1); }
+      36%  { transform: translate(58vw, 48vh) scaleX(1); }
+      48%  { transform: translate(78vw, 68vh) scaleX(1); }
+      50%  { transform: translate(78vw, 68vh) scaleX(-1); }
+      62%  { transform: translate(60vw, 18vh) scaleX(-1); }
+      74%  { transform: translate(38vw, 32vh) scaleX(-1); }
+      88%  { transform: translate(14vw, 16vh) scaleX(-1); }
+      100% { transform: translate(2vw, 72vh) scaleX(-1); }
     }
 
     @media (max-width: 600px) {
       .dog-wrap {
         width: clamp(95px, 27vw, 145px);
+        animation-duration: 14s;
       }
 
       @keyframes roam {
         0%   { transform: translate(2vw, 75vh) scaleX(1); }
-        15%  { transform: translate(22vw, 56vh) scaleX(1); }
-        30%  { transform: translate(52vw, 74vh) scaleX(1); }
-        45%  { transform: translate(70vw, 44vh) scaleX(1); }
-        50%  { transform: translate(72vw, 44vh) scaleX(-1); }
-        65%  { transform: translate(50vw, 14vh) scaleX(-1); }
-        80%  { transform: translate(20vw, 30vh) scaleX(-1); }
+        12%  { transform: translate(20vw, 58vh) scaleX(1); }
+        28%  { transform: translate(52vw, 74vh) scaleX(1); }
+        42%  { transform: translate(70vw, 46vh) scaleX(1); }
+        50%  { transform: translate(72vw, 46vh) scaleX(-1); }
+        64%  { transform: translate(50vw, 15vh) scaleX(-1); }
+        80%  { transform: translate(22vw, 30vh) scaleX(-1); }
         100% { transform: translate(2vw, 75vh) scaleX(-1); }
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .dog-wrap, .dog {
-        animation: none;
-      }
-      .dog-wrap {
-        left: 3vw;
-        top: 72vh;
       }
     }
   </style>
