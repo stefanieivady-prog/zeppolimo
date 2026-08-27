@@ -9,14 +9,71 @@
       margin: 0;
       width: 100%;
       height: 100%;
-      background: #ffffff;
       overflow: hidden;
+      background: #ffffff;
     }
 
-    body {
-      position: relative;
+    body { position: relative; }
+
+    /* Prickelnde Limonade – ganz im Hintergrund */
+    .bubbles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
     }
 
+    .bubble {
+      position: absolute;
+      bottom: -80px;
+      border: 2px solid rgba(244, 207, 73, .48);
+      background: rgba(255, 232, 128, .16);
+      border-radius: 50%;
+      box-shadow:
+        inset -3px -4px 8px rgba(244, 207, 73, .10),
+        inset 3px 3px 7px rgba(255, 245, 190, .28);
+      animation: rise linear infinite;
+    }
+
+    .bubble::after {
+      content: "";
+      position: absolute;
+      width: 28%;
+      height: 28%;
+      left: 18%;
+      top: 14%;
+      border-radius: 50%;
+      background: rgba(255, 239, 166, .34);
+    }
+
+    @keyframes rise {
+      0%   { transform: translate3d(0, 0, 0) scale(.75); opacity: 0; }
+      8%   { opacity: .85; }
+      45%  { transform: translate3d(18px, -52vh, 0) scale(.92); }
+      78%  { opacity: .72; }
+      100% { transform: translate3d(-12px, -115vh, 0) scale(1.08); opacity: 0; }
+    }
+
+    .bubble:nth-child(1)  { left: 5%;  width: 18px; height: 18px; animation-duration: 8s;  animation-delay: -2s; }
+    .bubble:nth-child(2)  { left: 13%; width: 38px; height: 38px; animation-duration: 13s; animation-delay: -8s; }
+    .bubble:nth-child(3)  { left: 21%; width: 12px; height: 12px; animation-duration: 7s;  animation-delay: -5s; }
+    .bubble:nth-child(4)  { left: 29%; width: 27px; height: 27px; animation-duration: 11s; animation-delay: -1s; }
+    .bubble:nth-child(5)  { left: 37%; width: 52px; height: 52px; animation-duration: 16s; animation-delay: -11s; }
+    .bubble:nth-child(6)  { left: 45%; width: 15px; height: 15px; animation-duration: 9s;  animation-delay: -4s; }
+    .bubble:nth-child(7)  { left: 53%; width: 32px; height: 32px; animation-duration: 12s; animation-delay: -7s; }
+    .bubble:nth-child(8)  { left: 61%; width: 20px; height: 20px; animation-duration: 8s;  animation-delay: -6s; }
+    .bubble:nth-child(9)  { left: 69%; width: 46px; height: 46px; animation-duration: 15s; animation-delay: -3s; }
+    .bubble:nth-child(10) { left: 77%; width: 13px; height: 13px; animation-duration: 7s;  animation-delay: -2s; }
+    .bubble:nth-child(11) { left: 84%; width: 29px; height: 29px; animation-duration: 11s; animation-delay: -9s; }
+    .bubble:nth-child(12) { left: 92%; width: 55px; height: 55px; animation-duration: 17s; animation-delay: -13s; }
+    .bubble:nth-child(13) { left: 17%; width: 23px; height: 23px; animation-duration: 10s; animation-delay: -9s; }
+    .bubble:nth-child(14) { left: 34%; width: 10px; height: 10px; animation-duration: 6s;  animation-delay: -3s; }
+    .bubble:nth-child(15) { left: 57%; width: 41px; height: 41px; animation-duration: 14s; animation-delay: -12s; }
+    .bubble:nth-child(16) { left: 73%; width: 17px; height: 17px; animation-duration: 9s;  animation-delay: -7s; }
+    .bubble:nth-child(17) { left: 88%; width: 25px; height: 25px; animation-duration: 12s; animation-delay: -4s; }
+
+    /* Bestehendes Logo bleibt ruhig in der Mitte */
     .logo {
       position: absolute;
       left: 50%;
@@ -28,6 +85,7 @@
       z-index: 1;
     }
 
+    /* Hund: gleiche Animation wie in der funktionierenden Version */
     .dog-wrap {
       position: absolute;
       left: 0;
@@ -88,7 +146,17 @@
   </style>
 </head>
 <body>
+  <div class="bubbles" aria-hidden="true">
+    <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+    <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+    <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+    <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+    <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+    <span class="bubble"></span><span class="bubble"></span>
+  </div>
+
   <img class="logo" src="zeppolimo-logo.jpeg" alt="Zeppolimo Logo mit Hinky und Pinky">
+
   <div class="dog-wrap" aria-hidden="true">
     <img class="dog" src="zeppolimo-hund.png" alt="">
   </div>
