@@ -166,24 +166,87 @@
       top: 25px;
       width: 260px;
       height: auto;
-      z-index: 1;
+      z-index: 2;
     }
 
+    /* ZEPPOMEDICA – rechts unten */
+    .zeppomedica-logo {
+      position: fixed;
+      right: 25px;
+      bottom: 25px;
+      width: 300px;
+      height: auto;
+      z-index: 2;
+    }
+
+    /* =========================================================
+       HANDY
+       Nur hier wird die Darstellung für kleine Displays angepasst.
+       Die Laptop-Version oben bleibt unverändert.
+       ========================================================= */
+
     @media (max-width: 600px) {
+
+      /* Hauptlogo auf dem Handy */
+      .logo {
+        width: 86vw;
+        top: 50%;
+      }
+
+      /* Coffee links oben */
+      .coffee-logo {
+        left: 10px;
+        top: 10px;
+        width: 42vw;
+        max-width: 170px;
+      }
+
+      /* Award unter Coffee */
+      .coffee-award {
+        left: 14vw;
+        top: 115px;
+        width: 58px;
+      }
+
+      /* Z-Pharma rechts oben */
+      .pharma-logo {
+        right: 10px;
+        top: 10px;
+        width: 35vw;
+        max-width: 145px;
+      }
+
+      /* Sport links unten */
+      .sport-logo {
+        left: 10px;
+        bottom: 15px;
+        width: 39vw;
+        max-width: 160px;
+      }
+
+      /* ZeppoMedica rechts unten */
+      .zeppomedica-logo {
+        right: 10px;
+        bottom: 10px;
+        width: 39vw;
+        max-width: 160px;
+      }
+
+      /* Hund auf dem Handy etwas kleiner */
       .dog-wrap {
-        width: clamp(95px, 27vw, 145px);
+        width: clamp(80px, 24vw, 125px);
         animation-duration: 14s;
       }
 
       @keyframes roam {
-        0%   { transform: translate(2vw, 75vh) scaleX(1); }
-        12%  { transform: translate(20vw, 58vh) scaleX(1); }
-        28%  { transform: translate(52vw, 74vh) scaleX(1); }
-        42%  { transform: translate(70vw, 46vh) scaleX(1); }
-        50%  { transform: translate(72vw, 46vh) scaleX(-1); }
-        64%  { transform: translate(50vw, 15vh) scaleX(-1); }
-        80%  { transform: translate(22vw, 30vh) scaleX(-1); }
-        100% { transform: translate(2vw, 75vh) scaleX(-1); }
+        0%   { transform: translate(2vw, 70vh) scaleX(1); }
+        12%  { transform: translate(18vw, 60vh) scaleX(1); }
+        28%  { transform: translate(48vw, 72vh) scaleX(1); }
+        42%  { transform: translate(68vw, 52vh) scaleX(1); }
+        50%  { transform: translate(68vw, 52vh) scaleX(-1); }
+        64%  { transform: translate(52vw, 27vh) scaleX(-1); }
+        80%  { transform: translate(22vw, 35vh) scaleX(-1); }
+        100% { transform: translate(2vw, 70vh) scaleX(-1); }
       }
     }
   </style>
@@ -191,6 +254,7 @@
 
 <body>
 
+  <!-- Bläschen -->
   <div class="bubbles" aria-hidden="true">
     <span class="bubble"></span>
     <span class="bubble"></span>
@@ -223,7 +287,7 @@
     alt="Zeppo Coffee"
     class="coffee-logo">
 
-  <!-- Award direkt unter Coffee -->
+  <!-- Award -->
   <img
     src="coffe-award-2026.png"
     alt="1. Platz Kategorie Modern 2026"
@@ -235,11 +299,17 @@
     alt="Zeppo Sport"
     class="sport-logo">
 
-  <!-- Pharma rechts oben -->
+  <!-- Z-Pharma rechts oben -->
   <img
     src="z-pharma-logo.png"
     alt="Z-Pharma"
     class="pharma-logo">
+
+  <!-- ZeppoMedica rechts unten -->
+  <img
+    src="zeppomedica-logo.png"
+    alt="ZeppoMedica"
+    class="zeppomedica-logo">
 
   <!-- Hund -->
   <div class="dog-wrap" aria-hidden="true">
