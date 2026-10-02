@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Zeppolimo</title>
+
   <style>
     html, body {
       margin: 0;
@@ -13,7 +14,9 @@
       background: #ffffff;
     }
 
-    body { position: relative; }
+    body {
+      position: relative;
+    }
 
     /* Prickelnde Limonade – ganz im Hintergrund */
     .bubbles {
@@ -73,7 +76,7 @@
     .bubble:nth-child(16) { left: 73%; width: 17px; height: 17px; animation-duration: 9s;  animation-delay: -7s; }
     .bubble:nth-child(17) { left: 88%; width: 25px; height: 25px; animation-duration: 12s; animation-delay: -4s; }
 
-    /* Bestehendes Logo bleibt ruhig in der Mitte */
+    /* Hauptlogo */
     .logo {
       position: absolute;
       left: 50%;
@@ -85,7 +88,7 @@
       z-index: 1;
     }
 
-    /* Hund: gleiche Animation wie in der funktionierenden Version */
+    /* Hund */
     .dog-wrap {
       position: absolute;
       left: 0;
@@ -126,6 +129,36 @@
       100% { transform: translate(2vw, 72vh) scaleX(-1); }
     }
 
+    /* Coffee rechts unten */
+    .coffee-logo {
+      position: fixed;
+      right: 25px;
+      bottom: 100px;
+      width: 300px;
+      height: auto;
+      z-index: 1;
+    }
+
+    /* Sport links unten */
+    .sport-logo {
+      position: fixed;
+      left: 25px;
+      bottom: 100px;
+      width: 300px;
+      height: auto;
+      z-index: 1;
+    }
+
+    /* Pharma rechts oben */
+    .pharma-logo {
+      position: fixed;
+      right: 25px;
+      top: 25px;
+      width: 260px;
+      height: auto;
+      z-index: 1;
+    }
+
     @media (max-width: 600px) {
       .dog-wrap {
         width: clamp(95px, 27vw, 145px);
@@ -141,64 +174,54 @@
         64%  { transform: translate(50vw, 15vh) scaleX(-1); }
         80%  { transform: translate(22vw, 30vh) scaleX(-1); }
         100% { transform: translate(2vw, 75vh) scaleX(-1); }
-}
-}
-
-.coffee-logo {
-  position: fixed;
-  left: 25px;
-  top: 25px;
-  width: 300px;
-  height: auto;
-  z-index: 1;
-}
-
-.coffee-award {
-  position: fixed;
-  left: 120px;
-  top: 325px;
-  width: 110px;
-  height: auto;
-  z-index: 2;
-}
-.sport-logo {
-  position: fixed;
-  left: 25px;
-  bottom: 100px;
-  width: 300px;
-  height: auto;
-  z-index: 0;
-}
-
-.pharma-logo {
-  position: fixed;
-  right: 25px;
-  top: 25px;
-  width: 260px;
-  height: auto;
-  z-index: 0;
-}  </style>
+      }
+    }
+  </style>
 </head>
+
 <body>
+
   <div class="bubbles" aria-hidden="true">
-    <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
-    <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
-    <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
-    <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
-    <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
-    <span class="bubble"></span><span class="bubble"></span>
+    <span class="bubble"></span>
+    <span class="bubble"></span>
+    <span class="bubble"></span>
+    <span class="bubble"></span>
+    <span class="bubble"></span>
+    <span class="bubble"></span>
+    <span class="bubble"></span>
+    <span class="bubble"></span>
+    <span class="bubble"></span>
+    <span class="bubble"></span>
+    <span class="bubble"></span>
+    <span class="bubble"></span>
+    <span class="bubble"></span>
+    <span class="bubble"></span>
+    <span class="bubble"></span>
+    <span class="bubble"></span>
+    <span class="bubble"></span>
   </div>
 
-  <img class="logo" src="zeppolimo-logo.png" alt="Zeppolimo Logo mit Hinky und Pinky">
-<img src="zeppo-sport-logo.png" alt="Zeppo Sport" class="sport-logo">
-<img src="z-pharma-logo.png" alt="Z-Pharma" class="pharma-logo">
+  <img class="logo"
+       src="zeppolimo-logo.png"
+       alt="Zeppolimo Logo mit Hinky und Pinky">
 
-<div class="dog-wrap" aria-hidden="true">
-  <img class="dog" src="zeppolimo-hund.png" alt="">
-</div>
+  <img src="zeppo-sport-logo.png"
+       alt="Zeppo Sport"
+       class="sport-logo">
 
-<img src="zeppo-coffee-logo.png" alt="Zeppo Coffee" class="coffee-logo">
-<img src="coffe-award-2026.png" alt="1. Platz Kategorie Modern 2026" class="coffee-award">
+  <img src="z-pharma-logo.png"
+       alt="Z-Pharma"
+       class="pharma-logo">
+
+  <div class="dog-wrap" aria-hidden="true">
+    <img class="dog"
+         src="zeppolimo-hund.png"
+         alt="">
+  </div>
+
+  <img src="zeppo-coffee-logo.png"
+       alt="Zeppo Coffee"
+       class="coffee-logo">
 
 </body>
 </html>
